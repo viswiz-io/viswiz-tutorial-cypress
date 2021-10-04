@@ -1,0 +1,8 @@
+{
+  "name": "viswiz-tutorial-cypress",
+  "version": "1.0.0",
+  "description": "VisWiz.io Tutorial: Cypress.io",
+  "main": "index.js",
+  "author": "VisWiz.io <https://www.viswiz.io>",
+  "license": "MIT"
+}
