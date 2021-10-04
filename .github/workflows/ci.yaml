@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - id: git
+        run: |
+          echo "::set-output name=commit_message::$(git log --format=%B -n 1 HEAD)"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.18.0'
+
+      - uses: cypress-io/github-action@v2.11.7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: chrome
+          headless: true
+          start: yarn start --silent
+          wait-on: 'http://localhost:8080'
+
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - run: yarn
+
+      - run: yarn test:viswiz
+        env:
+          COMMIT_MESSAGE: ${{ steps.git.outputs.commit_message }}
+          VISWIZ_API_KEY: ${{ secrets.VISWIZ_API_KEY }}
+          VISWIZ_PROJECT_ID: 78hL65uDxQhCm7TYhhz9GL
