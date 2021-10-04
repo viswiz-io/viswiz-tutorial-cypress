@@ -4,5 +4,11 @@
   "description": "VisWiz.io Tutorial: Cypress.io",
   "main": "index.js",
   "author": "VisWiz.io <https://www.viswiz.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server public/"
+  },
+  "devDependencies": {
+    "http-server": "13.0.2"
+  }
 }
