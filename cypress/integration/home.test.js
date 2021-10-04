@@ -9,5 +9,7 @@ context('home page', () => {
     cy.get('h1')
       .should('have.length', 1)
       .contains('ACME Banana');
+
+    cy.screenshot('home');
   });
 });

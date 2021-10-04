@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "start": "http-server public/",
-    "test": "cypress run --browser chrome"
+    "test": "cypress run --browser chrome",
+    "test:viswiz": "viswiz build --image-dir ./cypress/screenshots/ --message \"$COMMIT_MESSAGE\""
   },
   "devDependencies": {
     "cypress": "8.5.0",
-    "http-server": "13.0.2"
+    "http-server": "13.0.2",
+    "viswiz": "2.2.2"
   }
 }
