@@ -6,9 +6,11 @@
   "author": "VisWiz.io <https://www.viswiz.io>",
   "license": "MIT",
   "scripts": {
-    "start": "http-server public/"
+    "start": "http-server public/",
+    "test": "cypress run --browser chrome"
   },
   "devDependencies": {
+    "cypress": "8.5.0",
     "http-server": "13.0.2"
   }
 }
