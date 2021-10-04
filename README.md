@@ -1,6 +1,6 @@
 # VisWiz.io Tutorial with Cypress
 
-![Github Actions status](https://github.com/viswiz-io/viswiz-tutorial-cypress/actions/workflows/ci/badge.svg)
+![Github Actions status](https://github.com/viswiz-io/viswiz-tutorial-cypress/actions/workflows/ci.yaml/badge.svg)
 
 Code for the [VisWiz.io](https://www.viswiz.io) tutorial on how to [setup visual regression testing
 with Cypress and VisWiz.io](https://www.viswiz.io/help/tutorials/cypress).
