@@ -11,8 +11,8 @@
     "test:viswiz": "viswiz build --image-dir ./cypress/screenshots/ --message \"$COMMIT_MESSAGE\""
   },
   "devDependencies": {
-    "cypress": "8.5.0",
-    "http-server": "13.0.2",
+    "cypress": "9.6.0",
+    "http-server": "14.1.0",
     "viswiz": "2.2.2"
   }
 }
