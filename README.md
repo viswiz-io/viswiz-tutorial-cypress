@@ -7,6 +7,10 @@ with Cypress and VisWiz.io](https://www.viswiz.io/help/tutorials/cypress).
 
 Follow the tutorial above together with our [commit git history](https://github.com/viswiz-io/viswiz-tutorial-cypress/commits/main)
 
+This branch uses the [`viswiz-cypress`](https://github.com/viswiz-io/viswiz-cypress) plugin.
+
+To view the code without this plugin, browse the [`without-plugin`](https://github.com/viswiz-io/viswiz-tutorial-cypress/commits/without-plugin) branch.
+
 ## Install
 
 ```
