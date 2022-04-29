@@ -2,9 +2,11 @@ name: ci
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
   pull_request:
-    branches: [ master ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,11 +22,14 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.18.0'
+          node-version: '14.19.1'
 
-      - uses: cypress-io/github-action@v2.11.7
+      - uses: cypress-io/github-action@v3.0.3
         env:
+          COMMIT_MESSAGE: ${{ steps.git.outputs.commit_message }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VISWIZ_API_KEY: ${{ secrets.VISWIZ_API_KEY }}
+          VISWIZ_PROJECT_ID: 78hL65uDxQhCm7TYhhz9GL
         with:
           browser: chrome
           headless: true
@@ -36,11 +41,3 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-
-      - run: yarn
-
-      - run: yarn test:viswiz
-        env:
-          COMMIT_MESSAGE: ${{ steps.git.outputs.commit_message }}
-          VISWIZ_API_KEY: ${{ secrets.VISWIZ_API_KEY }}
-          VISWIZ_PROJECT_ID: 78hL65uDxQhCm7TYhhz9GL
